@@ -21,7 +21,9 @@ lower_sky = np.array([100, 150, 0])   # Lower range for sky blue
 upper_sky = np.array([140, 255, 255])  # Upper range for sky blue
 
 # Create a mask that isolates the colors in the specified range
-mask = cv2.inRange(hsv_image, lower_sky, upper_sky)
+mask = cv2.inRange(hsv_image, lower_color, upper_color)
+#mask = cv2.inRange(hsv_image, lower_sky, upper_sky)
+#mask = cv2.inRange(hsv_image, lower_green, upper_green)
 
 # Apply the mask to the original image to extract the isolated color
 filtered_image = cv2.bitwise_and(image, image, mask=mask)
